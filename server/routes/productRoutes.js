@@ -5,7 +5,7 @@ import {protect} from "../controllers/jwt.js";
 const router = express.Router();
 
 // GET all products
-router.get('/', protect, async (req, res) => {
+router.get('/',  async (req, res) => {
   try {
     const products = await Product.find({});
     res.json(products);
@@ -16,9 +16,9 @@ router.get('/', protect, async (req, res) => {
 
 // POST create a new product
 router.post('/', async (req, res) => {
-  const { name, description, price, imageUrl, account } = req.body;
+  const { name, description, price, imageUrl, account,category } = req.body;
   try {
-    const newProduct = new Product({ name, description, price, imageUrl, account });
+    const newProduct = new Product({ name, description, price, imageUrl, account,category });
     await newProduct.save();
     res.status(201).json(newProduct);
   } catch (error) {

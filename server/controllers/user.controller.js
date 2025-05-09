@@ -41,11 +41,11 @@ export const login2 = async (req, res) => {
         if (userr) {
             const pass = await bcrypt.compare(password, userr.password);
             if (pass) {
-                const token = jwt.sign({id: userr._id}, secretKey, { expiresIn: '1h' });
+                const token = jwt.sign({id: userr._id}, secretKey, { expiresIn: '60d' });
                 res.cookie('token', token, {
                     httpOnly: true,
                     secure: process.env.NODE_ENV === 'production',
-                    maxAge: 3600000 // 1 hour
+                    maxAge: 60 * 24 * 60 * 60 * 1000 // 60 days
                 });
 
                 res.status(200).json({ message: "Login successful" });

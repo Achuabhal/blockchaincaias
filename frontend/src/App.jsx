@@ -4,6 +4,7 @@ import Sign from './pages/signup';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Admin from './pages/prupdate';
+import P from "./pages/product"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         
 
 
+        <Route path="/product" element={<P />} />
         <Route path="/hi" element={<ProductList />} />
       </Routes>
     </BrowserRouter>

@@ -9,6 +9,7 @@ const ProductSchema = new Schema({
   imageUrl: { type: String },
   reciverac: { type: String },
   account: { type: String },
+  category: { type: String },
 });
 
 export default model('Product', ProductSchema);

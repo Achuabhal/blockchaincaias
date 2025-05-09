@@ -28,6 +28,7 @@ const Signup = () => {
       // Navigate to dashboard on successful signup
       if (response.status === 200) {
         navigate('/hi');
+        console.log('Signup successful:', response.data);
       }
     } catch (err) {
       // Check if error response exists and set error message accordingly

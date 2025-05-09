@@ -3,7 +3,12 @@ import api from '../conection/axios';
 
 function ProductForm() {
   const [product, setProduct] = useState({
-    name: '', description: '', price: '', imageUrl: '', account: ''
+    name: '',
+    description: '',
+    price: '',
+    imageUrl: '',
+    category: '',
+    account: ''
   });
   const [account, setAccount] = useState(null);
 
@@ -39,10 +44,38 @@ function ProductForm() {
   return (
     <form onSubmit={handleSubmit}>
       <p>Account: {account}</p>
-      <input name="name"      value={product.name}      onChange={handleChange} placeholder="Product Name" />
-      <textarea name="description" value={product.description} onChange={handleChange} placeholder="Description" />
-      <input name="price"     type="number" value={product.price}     onChange={handleChange} placeholder="Price" />
-      <input name="imageUrl"  type="url"    value={product.imageUrl}  onChange={handleChange} placeholder="Image URL" />
+      <input
+        name="name"
+        value={product.name}
+        onChange={handleChange}
+        placeholder="Product Name"
+      />
+      <textarea
+        name="description"
+        value={product.description}
+        onChange={handleChange}
+        placeholder="Description"
+      />
+      <input
+        name="price"
+        type="number"
+        value={product.price}
+        onChange={handleChange}
+        placeholder="Price"
+      />
+      <input
+        name="imageUrl"
+        type="url"
+        value={product.imageUrl}
+        onChange={handleChange}
+        placeholder="Image URL"
+      />
+      <input
+        name="category"
+        value={product.category}
+        onChange={handleChange}
+        placeholder="Category"
+      />
       <button type="submit">Save Product</button>
     </form>
   );
